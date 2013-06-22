@@ -5,10 +5,10 @@
         versionCode="10" 
         version   = "0.0.1">
     
-    <name>Vibrate Example</name>
+    <name>Stupid Vibrate Example</name>
 
     <description>
-        A vibrate app
+        A stupid
     </description>
 
     <author href="http://www.marakana.com" email="rick@marakana.com">
