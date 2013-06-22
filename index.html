@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>My Cool Webapp</title>
+		<script>
+			var APP_PRODUCTION_TYPE = null;
+			/*
+				1 >  phone gap in production
+				2 >  HTML5 app in domain name production
+				3 >  Phonegap in development (ripple emulator)
+				4 >  HTML5 dev env
+			*/
+			if(location.protcol === "file:"){
+				APP_PRODUCTION_TYPE = 1;
+				document.write("<script src='phonegap.js'></' + 'script>");
+				/*
+					this file should not actually exist in your repo 
+				 		it is injected when needed by build
+				*/
+			}else{
+				if(location.host !== "localhost:9000"){
+					APP_PRODUCTION_TYPE = 2;
+				}else{
+					if(location.host === "localhost:9000" && window.top.ripple){
+						document.write("<script src='ripple.phonegap.js'></' + 'script>");
+						APP_PRODUCTION_TYPE = 3;
+					}else{
+						APP_PRODUCTION_TYPE = 4;
+					}
+				}
+			}
+		</script>
+		<script>
+			//empty script tag, no idea why this is needed
+		</script>
+		<link rel="stylesheet" href="styles/reset.css" />
+		<link rel="stylesheet" href="styles/main.css" />
+		<script>
+			if(APP_PRODUCTION_TYPE === 3){
+				document.write('<link rel="styles' + 'heet" href="styles/new.css" />');
+			}
+		</script>
+	</head>
+	<body>
+		<section>
+			<header>
+				<h1>My cool app</h1>
+			</header>
+			<section data-page="vibrate">
+				<h1>Vibrate</h1>
+				<form>
+					<input id="vibrate_length_input" type="range" min="1" max="5" value="1" />
+					<p>This will vibrate for <output for="vibrate_length_input">1 second</output></p>
+					<input type="submit" value="let's shake" />
+				</form>
+			</section>
+			<footer>
+				<p>&copy;Ricky 2013</p>
+			</footer>
+		</section>
+		<script src="scripts/jquery-2.0.2.min.js"></script>
+		<script src="scripts/main.js"></script>
+	</body>
+</html>

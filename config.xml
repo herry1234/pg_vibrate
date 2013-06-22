@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.marakana.example"
+        versionCode="10" 
+        version   = "0.0.1">
+    
+    <name>Vibrate Example</name>
+
+    <description>
+        A vibrate app
+    </description>
+
+    <author href="http://www.marakana.com" email="rick@marakana.com">
+        Rick Hurst
+    </author>
+
+</widget>

@@ -1,0 +1,73 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body > section {
+	width: 450px;
+	background-color: rgb(141, 155, 158);
+	text-align: center;
+	margin: 1% auto;
+}
+
+body > section > header > h1{
+	background-color: rgb(101, 128, 136);
+	padding: 12px 20px;
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.19);
+	color: rgba(43, 44, 46, 0.77);
+	border-bottom: 1px solid rgba(245, 245, 245, 0.36);
+}
+
+body > section {
+	-webkit-transform: translate(0px, 0px) rotate(0deg);
+}
+
+footer{
+	background-color: rgb(101, 128, 136);
+}
+footer p{
+	background-color: rgb(101, 128, 136);
+	padding: 12px 20px;
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.19);
+	color: rgba(43, 44, 46, 0.77);
+	border-top: 1px solid rgba(245, 245, 245, 0.36);
+}
+
+
+@-webkit-keyframes Vibrate{
+	0%{
+		-webkit-transform: translate(0px, 0px) rotate(0deg);
+		background-color: darkgrey;
+	}
+	33%{
+		-webkit-transform: translate(1px, 1px) rotate(-1deg);
+	}
+	66%{	
+		-webkit-transform: translate(-1px, -1px) rotate(1deg);
+		background-color: dimgrey;
+	}
+	100%{
+		-webkit-transform: translate(0px, 0px) rotate(0deg);
+	}
+}
+body > section.vibrating{
+	-webkit-animation: Vibrate 0.3s ease infinite;
+}
+
+[data-page="vibrate"]{
+	color: whitesmoke;
+	text-shadow: 0px 0px 1px rgba(21, 22, 22, 0.59);
+}
+
+[data-page="vibrate"] form p {
+	margin-top: 16px;
+}
+
+
+[data-page="vibrate"] input[type="submit"] {
+	margin: 32px;
+	color: rgba(104, 104, 102, 0.94);
+	padding: 12px;
+	border: 1px solid gainsboro;
+	border-radius: 5px;
+	background-color: linen;
+}
