@@ -11,10 +11,8 @@
 				3 >  Phonegap in development (ripple emulator)
 				4 >  HTML5 dev env
 			*/
-			alert(location.protocol);
 
 			if(location.protocol === "file:"){
-				alert("FILE WTF");
 				APP_PRODUCTION_TYPE = 1;
 				document.write("<script src='phonegap.js'></' + 'script>");
 				/*
@@ -41,14 +39,14 @@
 		<link rel="stylesheet" href="styles/main.css" />
 		<script>
 			if(APP_PRODUCTION_TYPE === 3){
-				document.write('<link rel="styles' + 'heet" href="styles/new.css" />');
+				document.write('<link rel="styles' + 'heet" href="styles/ripple.css" />');
 			}
 		</script>
 	</head>
 	<body>
 		<section>
 			<header>
-				<h1>My cool app v0.1</h1>
+				<h1>My cool app v0.2</h1>
 			</header>
 			<section data-page="vibrate">
 				<h1>Vibrate</h1>
