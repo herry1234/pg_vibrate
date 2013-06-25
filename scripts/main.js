@@ -69,7 +69,9 @@ App.LetsGo = (function(){
 	//move this
 	var toggle_state_boo = 0;
 	if("ontouchmove" in $("<div />")[0]){
+		alert("fire1");
 		$(document).on("touchmove", "#toggle", function(tme){
+			alert("fire2");
 			var offset_left_num = tme.target.offsetLeft,
 				finger_left_num = tme.originalEvent.clientX,
 				button_width = $(this).width();
@@ -83,6 +85,7 @@ App.LetsGo = (function(){
 			}
 		});
 		$(document).on("touchend", "#toggle", function(tme){
+			alert("fire3");
 			console.log("Touchend fired: Toggle state is now: " + toggle_state_boo);
 			if(toggle_state_boo){
 				$(this).removeClass("clicked").addClass("clicked");
