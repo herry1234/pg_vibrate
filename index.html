@@ -24,7 +24,7 @@
 					APP_PRODUCTION_TYPE = 2;
 				}else{
 					if(location.host === "localhost:9000" && window.top.ripple){
-						document.write("<script src='ripple.phonegap.js'></' + 'script>");
+						document.write("<script src='ripple.pho" + "negap.js'><\/script>");
 						APP_PRODUCTION_TYPE = 3;
 					}else{
 						APP_PRODUCTION_TYPE = 4;
@@ -42,6 +42,30 @@
 				document.write('<link rel="styles' + 'heet" href="styles/ripple.css" />');
 			}
 		</script>
+		<script src="scripts/jquery-2.0.2.min.js"></script>
+		<script>
+			(function(){
+				var device_str = null;
+				(function(){
+					if('Mozilla/5.0 (PlayBook; U; RIM Tablet OS 2.1.0; en-US) AppleWebKit/536.2+ (KHTML, like Gecko) Version/7.2.1.0 Safari/536.2+' === navigator.userAgent){
+						device_str = "blackberry_playbook_tablet";
+						return;
+					}
+					if('Mozilla/5.0 (BlackBerry; U; BlackBerry 9350; en) AppleWebKit/534.1+ (KHTML, Like Gecko) Version/7.0.0.0 Mobile Safari/534.1' === navigator.userAgent){
+						device_str = "blackberry_curve_generic";
+						return;
+					}
+				})();
+				if(device_str){
+					console.info("this device is: " + device_str);
+					$("html").attr("data-device", device_str);
+				}else{
+					console.warn("no idea what this device is, I am going to ping my sever so I can stay up to date");
+				}
+			})();
+		</script>
+		<!-- Mozilla/5.0 (PlayBook; U; RIM Tablet OS 2.1.0; en-US) AppleWebKit/536.2+ (KHTML, like Gecko) Version/7.2.1.0 Safari/536.2+ -->
+		<link rel="stylesheet" href="blackberry_playbook_tablet.css" />
 	</head>
 	<body>
 		<section>
@@ -55,12 +79,12 @@
 					<p>This will vibrate for <output for="vibrate_length_input">1 second</output></p>
 					<input type="submit" value="let's shake" />
 				</form>
+				<div id="toggle"></div>
 			</section>
 			<footer>
 				<p>&copy;Ricky 2013</p>
 			</footer>
 		</section>
-		<script src="scripts/jquery-2.0.2.min.js"></script>
 		<script src="scripts/main.js"></script>
 	</body>
 </html>

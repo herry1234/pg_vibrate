@@ -65,6 +65,9 @@ App.LetsGo = (function(){
 (function init(){
 	$("#vibrate_length_input").change(App.Vibrate.setVibrateDuration);
 	$("[data-page='vibrate'] form").submit(App.Vibrate.doVibrate);
+	$("#toggle").click(function(){
+		$(this).toggleClass("clicked");
+	});
 })();
 
 if(APP_PRODUCTION_TYPE === 1 || APP_PRODUCTION_TYPE === 3){

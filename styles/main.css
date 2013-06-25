@@ -94,3 +94,32 @@ body > section.vibrating{
 	border-radius: 5px;
 	background-color: linen;
 }
+
+/*---------devices-------*/
+/*blackberry_playbook_tablet*/
+[data-device^="blackberry"] [data-page] > h1 {
+	background-color: rgba(255,0,0,0.3);
+}
+/*all blackberrys*/
+[data-device="blackberry_playbook_tablet"] [data-page] > h1 {
+	padding: 100px 0;
+	background-color: transparent;
+}
+
+#toggle{
+	border: 1px solid rgba(109, 140, 168, 0.77);
+	border-radius: 20px;
+	box-shadow: 2px -2px 2px rgba(0, 0, 0, 0.53);
+	margin: 10px auto;
+	width: 180px;
+	height: 90px;
+	background: url("../images/toggle.png") no-repeat -75px -511px transparent;
+	background-position: -119px -493px;
+}
+#toggle:hover{
+	cursor: pointer;
+	box-shadow: 2px -2px 2px rgba(0, 0, 0, 0.53), 0 0 18px rgba(200, 203, 216, 1);
+}
+#toggle.clicked{
+	background-position: -119px -593px;
+}
