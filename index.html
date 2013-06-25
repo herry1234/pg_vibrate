@@ -14,7 +14,7 @@
 
 			if(location.protocol === "file:"){
 				APP_PRODUCTION_TYPE = 1;
-				document.write("<script src='phonegap.js'></' + 'script>");
+				document.write("<script src='phonegap.js'></script" + ">");
 				/*
 					this file should not actually exist in your repo 
 				 		it is injected when needed by build
@@ -24,7 +24,7 @@
 					APP_PRODUCTION_TYPE = 2;
 				}else{
 					if(location.host === "localhost:9000" && window.top.ripple){
-						document.write("<script src='ripple.pho" + "negap.js'><\/script>");
+						document.write("<script src='ripple.phonegap.js'></script" + ">");
 						APP_PRODUCTION_TYPE = 3;
 					}else{
 						APP_PRODUCTION_TYPE = 4;
@@ -39,7 +39,7 @@
 		<link rel="stylesheet" href="styles/main.css" />
 		<script>
 			if(APP_PRODUCTION_TYPE === 3){
-				document.write('<link rel="styles' + 'heet" href="styles/ripple.css" />');
+				document.write("<link rel='stylesheet' href='styles/ripple.css' /" + ">");
 			}
 		</script>
 		<script src="scripts/jquery-2.0.2.min.js"></script>
