@@ -98,7 +98,7 @@ body > section.vibrating{
 }
 
 /*---------devices-------*/
-/*blackberry_playbook_tablet*/
+/*put in blackberry_playbook_tablet css*/
 [data-device^="blackberry"] [data-page] > h1 {
 	background-color: rgba(255,0,0,0.3);
 }
@@ -116,12 +116,12 @@ body > section.vibrating{
 	width: 180px;
 	height: 90px;
 	background: url("../images/toggle.png") no-repeat -75px -511px transparent;
-	background-position: -119px -493px;
+	background-position: -119px -593px;
 }
 #toggle:hover{
 	cursor: pointer;
 	box-shadow: 2px -2px 2px rgba(0, 0, 0, 0.53), 0 0 18px rgba(200, 203, 216, 1);
 }
 #toggle.clicked{
-	background-position: -119px -593px;
+	background-position: -119px -493px;
 }
