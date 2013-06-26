@@ -66,12 +66,13 @@ App.LetsGo = (function(){
 	
 	//android hack
 	
-	if($("body > section > section").css("height") === "0px"){
+	/*if($("body > section > section").css("height") === "0px"){
 		$(window).bind("resize", function(){
 			$("body > section > section").css("height", "100%").css("height", "-=88px");
 		});
 		$("body > section > section").css("height", "100%").css("height", "-=88px");
 	}
+	*/
 	//$("body > section > section").css("height", "100%").css("height", "-=88px");
 
 	$("#vibrate_length_input").change(App.Vibrate.setVibrateDuration);
