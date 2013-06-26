@@ -23,12 +23,12 @@ body > section > footer{
 }
 body > section > section{
 	position: absolute;
-	overflow: scroll;
-	-webkit-overflow-scrolling: touch;
 	top:44px;
 	width:100%;
 	height: -webkit-calc(100% - 88px);
 	height: calc(100% - 88px);
+	overflow: scroll;
+	/*-webkit-overflow-scrolling: touch;*/
 }
 body > section > header > h1{
 	background-color: rgb(101, 128, 136);
