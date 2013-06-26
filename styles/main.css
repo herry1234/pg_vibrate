@@ -22,7 +22,7 @@ body > section > footer{
 }
 body > section > section{
 	position: absolute;
-	overflow: auto;
+	overflow: scroll;
 	-webkit-overflow-scrolling: touch;
 	top:44px;
 	width:100%;
