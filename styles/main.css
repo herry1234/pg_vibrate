@@ -30,7 +30,7 @@ body > section > section{
 	height: calc(100% - 88px);
 	/** see android hack js **/
 	overflow-y: scroll;
-	webkit-overflow-scrolling: touch;
+	-webkit-overflow-scrolling: touch;
 }
 
 body > section > header > h1{
