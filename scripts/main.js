@@ -82,7 +82,7 @@ App.LetsGo = (function(){
 				console.log("finger " + (half_way_point - (finger_left_num - offset_left_num)) + " px to the left of the half_way_point, trigger OFF if not oFF");
 			}
 		});
-		$(document).on("touchend", "#toggle", function(tme){
+		$(document).on("touchend", "#toggle", function(te){
 			console.log("Touchend fired: Toggle state is now: " + toggle_state_boo);
 			if(toggle_state_boo){
 				$(this).removeClass("clicked").addClass("clicked");
