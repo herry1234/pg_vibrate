@@ -110,13 +110,6 @@ App.LetsGo = (function(){
 			}
 		});
 	}
-
-
-
-	// $("#toggle").swipe(function(se){
-	// 	console.dir(se);
-	// 	$(this).toggleClass("clicked");
-	// });
 })();
 
 if(APP_PRODUCTION_TYPE === 1 || APP_PRODUCTION_TYPE === 3){
