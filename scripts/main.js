@@ -15,14 +15,14 @@ App.Vibrate = (function(){
 	function doVibrate(submit_event){
 		submit_event.preventDefault();
 		$("body > section").addClass("vibrating");
-		setTimeout(function(){
-			$("body > section").removeClass("vibrating");
-		}, _vibrate_duration * 1000);
 		try{
 			App.Phonegap.Vibrate.doVibrate(_vibrate_duration * 1000);
 		}catch(e){
 			console.info("Phonegap does not exist right now, if you on the web app you will see an error here it's ok RELAX >  " + e);
 		}
+		setTimeout(function(){
+			$("body > section").removeClass("vibrating");
+		}, _vibrate_duration * 1000);
 	}
 
 	return {
@@ -64,17 +64,14 @@ App.LetsGo = (function(){
  */
 (function init(){
 	
-	//android hack
-	
-	/*if($("body > section > section").css("height") === "0px"){
+	//android mini-fill for css calc
+	if($("body > section > section").css("height") === "0px"){
 		$(window).bind("resize", function(){
 			$("body > section > section").css("height", "100%").css("height", "-=88px");
 		});
 		$("body > section > section").css("height", "100%").css("height", "-=88px");
 	}
-	*/
-	//$("body > section > section").css("height", "100%").css("height", "-=88px");
-
+	
 	$("#vibrate_length_input").change(App.Vibrate.setVibrateDuration);
 	$("[data-page='vibrate'] form").submit(App.Vibrate.doVibrate);
 	
