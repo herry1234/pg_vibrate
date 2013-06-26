@@ -69,13 +69,16 @@ App.LetsGo = (function(){
 	//move this
 	var toggle_state_boo = 0;
 	if("ontouchmove" in $("<div />")[0]){
-		alert("fire1");
+		//alert("fire1");
 		$(document).on("touchmove", "#toggle", function(tme){
-			alert("fire2");
+			//alert("fire2");
 			var offset_left_num = tme.target.offsetLeft,
 				finger_left_num = tme.originalEvent.clientX,
 				button_width = $(this).width();
 				half_way_point = Math.ceil(button_width/2);
+
+			$("h1").text(offset_left_num + " and " + finger_left_num + " and" + half_way_point);
+
 			if((finger_left_num - offset_left_num) > half_way_point){
 				toggle_state_boo = 1;
 				console.log("finger " + ((finger_left_num - offset_left_num) - half_way_point) + " px to the right of the half_way_point, trigger ON if not on");
