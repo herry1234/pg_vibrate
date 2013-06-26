@@ -63,6 +63,17 @@ App.LetsGo = (function(){
  * Kick the event handlers off
  */
 (function init(){
+	
+	//android hack
+	
+	if($("body > section > section").css("height") === "0px"){
+		$(window).bind("resize", function(){
+			$("body > section > section").css("height", "100%").css("height", "-=88px");
+		});
+		$("body > section > section").css("height", "100%").css("height", "-=88px");
+	}
+	//$("body > section > section").css("height", "100%").css("height", "-=88px");
+
 	$("#vibrate_length_input").change(App.Vibrate.setVibrateDuration);
 	$("[data-page='vibrate'] form").submit(App.Vibrate.doVibrate);
 	
@@ -76,10 +87,10 @@ App.LetsGo = (function(){
 				half_way_point = Math.ceil(button_width/2);
 			if((finger_left_num - offset_left_num) > half_way_point){
 				toggle_state_boo = 1;
-				console.log("finger " + ((finger_left_num - offset_left_num) - half_way_point) + " px to the right of the half_way_point, trigger ON if not on");
+				//console.log("finger " + ((finger_left_num - offset_left_num) - half_way_point) + " px to the right of the half_way_point, trigger ON if not on");
 			}else{
 				toggle_state_boo = 0;
-				console.log("finger " + (half_way_point - (finger_left_num - offset_left_num)) + " px to the left of the half_way_point, trigger OFF if not oFF");
+				//console.log("finger " + (half_way_point - (finger_left_num - offset_left_num)) + " px to the left of the half_way_point, trigger OFF if not oFF");
 			}
 		});
 		$(document).on("touchend", "#toggle", function(te){

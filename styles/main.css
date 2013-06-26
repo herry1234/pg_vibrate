@@ -25,11 +25,14 @@ body > section > section{
 	position: absolute;
 	top:44px;
 	width:100%;
+	height:0px;
 	height: -webkit-calc(100% - 88px);
 	height: calc(100% - 88px);
-	overflow: scroll;
-	/*-webkit-overflow-scrolling: touch;*/
+	/** see android hack js **/
+	overflow-y: scroll;
+	webkit-overflow-scrolling: touch;
 }
+
 body > section > header > h1{
 	background-color: rgb(101, 128, 136);
 	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.19);
