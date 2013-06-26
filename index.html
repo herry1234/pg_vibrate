@@ -24,7 +24,7 @@
 				if(location.host !== "localhost:9000"){
 					APP_PRODUCTION_TYPE = 2;
 				}else{
-					if(location.host === "localhost:9000" && window.top.ripple){
+					if(window.top.ripple){
 						document.write("<script src='ripple.phonegap.js'></script" + ">");
 						APP_PRODUCTION_TYPE = 3;
 					}else{
@@ -32,9 +32,6 @@
 					}
 				}
 			}
-		</script>
-		<script>
-			//empty script tag, no idea why this is needed
 		</script>
 		<link rel="stylesheet" href="styles/reset.css" />
 		<link rel="stylesheet" href="styles/main.css" />
@@ -63,10 +60,11 @@
 				}else{
 					console.warn("no idea what this device is, I am going to ping my sever so I can stay up to date");
 				}
+				if(device_str.indexOf("blackberry") !== -1){
+					document.write("<link rel='stylesheet' href='styles/blackberry.css' /" + ">");
+				}
 			})();
 		</script>
-		<!-- Mozilla/5.0 (PlayBook; U; RIM Tablet OS 2.1.0; en-US) AppleWebKit/536.2+ (KHTML, like Gecko) Version/7.2.1.0 Safari/536.2+ -->
-		<link rel="stylesheet" href="blackberry_playbook_tablet.css" />
 	</head>
 	<body>
 		<section>
